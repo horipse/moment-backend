@@ -21,17 +21,35 @@
     "include-all": "~0.1.6",
     "rc": "1.0.1",
     "sails": "~0.12.4",
-    "sails-disk": "~0.10.9"
+    "sails-disk": "~0.10.9",
+    "sails-hook-babel": "^6.0.1",
+    "sails-swagger": "^0.5.1"
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "standard": "standard --verbose | snazzy",
+    "test": "npm run standard"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      ".tmp/",
+      "api/responses/",
+      "assets/js/dependencies/sails.io.js"
+    ]
   },
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/root/momentBackend.git"
+    "url": "git://github.com/horipse/momentBackend.git"
   },
-  "author": "root",
-  "license": ""
+  "author": "horipse",
+  "license": "",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "sails-hook-autoreload": "^0.13.2",
+    "snazzy": "^4.0.1",
+    "standard": "^7.1.2"
+  }
 }
