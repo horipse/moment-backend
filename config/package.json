@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "sails-mongo": "^0.12.1"
+  }
+}
