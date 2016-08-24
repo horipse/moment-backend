@@ -26,15 +26,17 @@ module.exports = {
         timezone: 8
       },
       list: [{
+        id: 1,
         group: "Core Platform",
         project: "Sign In & Up Backend",
         startTime: startTime,
         endTime: endTime,
-        remainingTime: startTime - endTime,
+        remainingTime: endTime - startTime,
         elapsedTime: nowUnix - startTime,
         appendix: "In Sprint 24"
       },
       {
+        id: 2,
         group: "Spot Exchange",
         project: "New Spot CNY",
         startTime: startTime,
