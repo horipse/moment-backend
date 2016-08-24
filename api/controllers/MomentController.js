@@ -39,7 +39,7 @@ module.exports = {
         project: "New Spot CNY",
         startTime: startTime,
         endTime: endTime,
-        remainingTime: startTime - endTime,
+        remainingTime: endTime - startTime,
         elapsedTime: nowUnix - startTime,
         appendix: "ASAP"
       }],
