@@ -9,8 +9,8 @@ module.exports = {
   getCurrentStatus: function (req, res) {
     let nowTime = new Date ()
     let nowUnix = nowTime.getTime()
-    let startTime = parse("2016-08-20")
-    let endTime = parse("2016-09-01")
+    let startTime = Date.parse("2016-08-20")
+    let endTime = Date.parse("2016-09-01")
 
     let nowStatus = {
       date: {
@@ -39,7 +39,7 @@ module.exports = {
         project: "New Spot CNY",
         startTime: startTime,
         endTime: endTime,
-        remainingTime: startTime - endTime,
+        remainingTime: endTime - startTime,
         elapsedTime: nowUnix - startTime,
         appendix: "ASAP"
       }],
