@@ -6,20 +6,46 @@
  */
 'use strict'
 module.exports = {
-  getCurrentTime: function (req, res) {
+  getCurrentStatus: function (req, res) {
     let nowTime = new Date ()
-    let nowTimeJson = {
-      year: nowTime.getFullYear(),
-      month: nowTime.getMonth() + 1,
-      day: nowTime.getDate(),
-      hour: nowTime.getHours(),
-      mintue: nowTime.getMinutes(),
-      second: nowTime.getSeconds(),
-      weekday: nowTime.getDay(),
-      unix: nowTime.getTime(),
-      timezone: 8
+    let nowUnix = nowTime.getTime()
+    let startTime = parse("2016-08-20")
+    let endTime = parse("2016-09-01")
+
+    let nowStatus = {
+      date: {
+        year: nowTime.getFullYear(),
+        month: nowTime.getMonth() + 1,
+        day: nowTime.getDate(),
+        weekday: nowTime.getDay()
+      },
+      time: {
+        hour: nowTime.getHours(),
+        mintue: nowTime.getMinutes(),
+        second: nowTime.getSeconds(),
+        timezone: 8
+      },
+      list: [{
+        group: "Core Platform",
+        project: "Sign In & Up Backend",
+        startTime: startTime,
+        endTime: endTime,
+        remainingTime: startTime - endTime,
+        elapsedTime: nowUnix - startTime,
+        appendix: "In Sprint 24"
+      },
+      {
+        group: "Spot Exchange",
+        project: "New Spot CNY",
+        startTime: startTime,
+        endTime: endTime,
+        remainingTime: startTime - endTime,
+        elapsedTime: nowUnix - startTime,
+        appendix: "ASAP"
+      }]
+      unixTime: nowUnix
     }
-    return res.json(nowTimeJson)
+    return res.json(nowStatus)
   },
   addProject: function (req, res) {
   
